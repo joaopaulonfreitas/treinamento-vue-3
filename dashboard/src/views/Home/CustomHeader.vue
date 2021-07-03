@@ -11,8 +11,18 @@
         </h1>
 
         <div>
-          <button class="px-6 py-2 font-bold rounded-full text-white focus:outline-none">Criar uma conta</button>
-          <button class="btn_white px-6 py-3">Entrar</button>
+          <button
+            class="px-6 py-2 font-bold rounded-full text-white focus:outline-none"
+            @click="() => emit('create-account')"
+          >
+            Criar uma conta
+          </button>
+          <button
+            class="btn_white px-6 py-3"
+            @click="() => emit('login')"
+          >
+          Entrar
+          </button>
         </div>
       </header>
 
@@ -43,7 +53,9 @@
 
 <script>
 export default {
-
+  setup (_, { emit }) {
+    return { emit }
+  }
 }
 </script>
 
